@@ -1,3 +1,10 @@
+# Point of entry, console script
+
+# Reads test data from STDIN
+# Uses Bakery module for calculating results
+# Formats results
+# Writes formatted results to STDOUT
+
 require_relative 'bakery'
 
 def print_cost_and_breakdown( c_b )
@@ -10,6 +17,8 @@ def print_cost_and_breakdown( c_b )
     puts "    #{ pack[ :count ] } x #{ pack_size } $#{ pack[ :price ].to_f }"
   end
 end
+
+# Main work cycle
 
 $stdin.each_line do |line|
   amount, code = line.split

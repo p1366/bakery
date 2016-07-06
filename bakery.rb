@@ -1,3 +1,9 @@
+# Main module
+
+# Contains:
+# * Bakery Products configuration
+# * Class methods for lazy caching Product instances
+
 require 'bigdecimal'
 
 require_relative 'bakery/backtracking'
@@ -5,6 +11,8 @@ require_relative 'bakery/product'
 
 module Bakery
 
+  # Bakery Products configuration - codes and count/price per pack
+  # I dont like muffins and .freeze.freeze.freeze
   PRODUCTS = {
     'VS5' => {
       3 => '6.99',
@@ -32,7 +40,7 @@ module Bakery
       packs = PRODUCTS[ code ]
       if packs
         products[ code ] ||= Product.new(
-          code,
+          # Price should be BigDecimal to avoid float losses
           packs.each_with_object( {} ) { |(k, v), memo| memo[ k ] = BigDecimal.new( v ) }
         )
       end
