@@ -55,5 +55,6 @@ There are two most common ways to solve the problem -
 
 Dynamic programming solution calculates each `amount last coin` as `min(coins)`
 of previously calculated `amounts`: `amount - coin1`..`amount - coinN`.
-Iterative solution should calculate all mins from 1 to `amount` so it requires
-`O( amount * N )` time and `O( amount + N )` memory.
+Iterative solution should calculate all mins from 1 to `amount` so it requires:
+* `O( amount * N )` time
+* `O( amount + N )` memory.
