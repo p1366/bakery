@@ -46,3 +46,14 @@ Bakery problem is a kind of
 which is [Knapsack type problem](https://en.wikipedia.org/wiki/Knapsack_problem).
 In terms of the problem, order amount is `amount` and pack sizes is
 `coin denominations` which quantity is `N`.
+
+There are two most common ways to solve the problem -
+[Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) and
+[Backtracking](https://en.wikipedia.org/wiki/Backtracking).
+
+### Dynamic programming solution
+
+Dynamic programming solution calculates each `amount last coin` as `min(coins)`
+of previously calculated `amounts`: `amount - coin1`..`amount - coinN`.
+Iterative solution should calculate all mins from 1 to `amount` so it requires
+`O( amount * N )` time and `O( amount + N )` memory.
