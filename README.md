@@ -53,8 +53,23 @@ There are two most common ways to solve the problem -
 
 ### Dynamic programming solution
 
-Dynamic programming solution calculates each `amount last coin` as `min(coins)`
-of previously calculated `amounts`: `amount - coin1`..`amount - coinN`.
+Dynamic programming solution calculates each `amount last pack` as `min(packs)`
+of previously calculated `amounts`: `amount - pack1`..`amount - packN`.
 Iterative solution should calculate all mins from 1 to `amount` so it requires:
 * `O( amount * N )` time
-* `O( amount + N )` memory.
+* `O( amount + N )` memory
+
+### Backtracking solution
+
+Backtracking solution uses idea of greedy full search and usually much slower
+than Dynamic programming solution for big `N` because it is
+[NP-hard](https://en.wikipedia.org/wiki/NP-hardness).
+
+But Bakery problem has very small `N` (2..3) and "unlimited" `amount`. Thus
+Backtracking solution requires:
+* `O( amount / pack1 )` worst time for 2 pack products
+* `O( ( amount / pack1 ) * ( amount / pack2 ) )` worst time for 3 pack products
+* `O( N )` memory
+
+So Backtracking was choosen for the Bakery as most time and memory effective
+solution.
