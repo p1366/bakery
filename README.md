@@ -6,6 +6,15 @@ Ruby solution for [Bakery coding challenge](Codingchallenge.pdf).
 [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) and
 clone the repo.
 
+Ensure command
+```console
+ruby --version
+```
+has output like
+```console
+ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin14]
+```
+
 ## Usage
 
 Script `main.rb` inputs data from `STDIN` and outputs to `STDOUT`. You can use
@@ -15,4 +24,28 @@ Run script:
 ```console
 cd bakery
 ruby main.rb < test.sample
+```
+
+Ensure you got something like
+```console
+10 VS5 $17.98
+    2 x 5 $8.99
+14 MB11 $54.8
+    1 x 8 $24.95
+    3 x 2 $9.95
+13 CF $25.85
+    2 x 5 $9.95
+    1 x 3 $5.95
+0 CF no solution
+4 VS5 no solution
+1_000_001 VS5 $1798004.99
+    199999 x 5 $8.99
+    2 x 3 $6.99
+1_000_003 MB11 $3118771.85
+    124999 x 8 $24.95
+    1 x 5 $16.95
+    3 x 2 $9.95
+1_000_009 CF $1887795.79
+    111111 x 9 $16.99
+    2 x 5 $9.95
 ```

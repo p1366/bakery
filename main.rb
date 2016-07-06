@@ -1,8 +1,8 @@
 require_relative 'bakery'
 
 def print_cost_and_breakdown( c_b )
-  sum = c_b.values.reduce( 0 ) do |sum, pack|
-    sum + pack[ :count ] * pack[ :price ]
+  sum = c_b.values.reduce( 0 ) do |memo, pack|
+    memo + pack[ :count ] * pack[ :price ]
   end.to_f
 
   puts "$#{ sum }"
